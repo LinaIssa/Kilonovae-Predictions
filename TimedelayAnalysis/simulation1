@@ -1,0 +1,132 @@
+Last login: Wed Oct 16 17:04:35 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) n160-p41:POSSIS linaissa$ cd outputs/
+(base) n160-p41:outputs linaissa$ tail -f nph1.0e+04_mej0.04_phi30_T5.0e+03_aopac1.0_info.txt 
+Timestep 1 out of 30 finished (0.50 days). Time: 113.093 
+Timestep 2 out of 30 finished (1.00 days). Time: 211.057 
+Timestep 3 out of 30 finished (1.50 days). Time: 285.585 
+Timestep 4 out of 30 finished (2.00 days). Time: 352.385 
+Timestep 5 out of 30 finished (2.50 days). Time: 413.338 
+Timestep 6 out of 30 finished (3.00 days). Time: 474.017 
+Timestep 7 out of 30 finished (3.50 days). Time: 527.655 
+Timestep 8 out of 30 finished (4.00 days). Time: 581.291 
+Timestep 9 out of 30 finished (4.50 days). Time: 631.977 
+Timestep 10 out of 30 finished (5.00 days). Time: 681.909 
+Timestep 11 out of 30 finished (5.50 days). Time: 734.506 
+Timestep 12 out of 30 finished (6.00 days). Time: 787.150 
+Timestep 13 out of 30 finished (6.50 days). Time: 840.639 
+Timestep 14 out of 30 finished (7.00 days). Time: 898.579 
+Timestep 15 out of 30 finished (7.50 days). Time: 956.298 
+Timestep 16 out of 30 finished (8.00 days). Time: 1017.767 
+Timestep 17 out of 30 finished (8.50 days). Time: 1084.156 
+Timestep 18 out of 30 finished (9.00 days). Time: 1155.323 
+Timestep 19 out of 30 finished (9.50 days). Time: 1231.459 
+Timestep 20 out of 30 finished (10.00 days). Time: 1307.680 
+Timestep 21 out of 30 finished (10.50 days). Time: 1382.187 
+Timestep 22 out of 30 finished (11.00 days). Time: 1455.641 
+Timestep 23 out of 30 finished (11.50 days). Time: 1530.311 
+Timestep 24 out of 30 finished (12.00 days). Time: 1604.599 
+Timestep 25 out of 30 finished (12.50 days). Time: 1676.871 
+Timestep 26 out of 30 finished (13.00 days). Time: 1750.681 
+Timestep 27 out of 30 finished (13.50 days). Time: 1821.571 
+Timestep 28 out of 30 finished (14.00 days). Time: 1887.715 
+Timestep 29 out of 30 finished (14.50 days). Time: 1946.839 
+Timestep 30 out of 30 finished (15.00 days). Time: 1993.807 
+
+0 real packets thermalised in the inner region
+7.61e+04 real packets were killed as they travelled in a high-opacity cell 
+
+ ---------- OBSERVER 1 (costh = 0.00, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.43%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 2 (costh = 0.10, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.43%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 3 (costh = 0.20, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.43%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 4 (costh = 0.30, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.43%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 5 (costh = 0.40, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.43%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 6 (costh = 0.50, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.43%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 7 (costh = 0.60, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.44%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 8 (costh = 0.70, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.44%) were scattered by a continuum interaction
+- 2.46e+04 (0.73%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 9 (costh = 0.80, phi = 0.0) -----------
+3.39e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.44%) were scattered by a continuum interaction
+- 2.46e+04 (0.72%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 10 (costh = 0.90, phi = 0.0) -----------
+3.4e+06 virtual packets arrived at the observer
+- 3e+05 (8.84%) arrived directly after creation
+- 3.07e+06 (90.44%) were scattered by a continuum interaction
+- 2.46e+04 (0.72%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 11 (costh = 1.00, phi = 0.0) -----------
+3.4e+06 virtual packets arrived at the observer
+- 3e+05 (8.83%) arrived directly after creation
+- 3.07e+06 (90.44%) were scattered by a continuum interaction
+- 2.46e+04 (0.72%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+Total time: 1993.808 
+
+
