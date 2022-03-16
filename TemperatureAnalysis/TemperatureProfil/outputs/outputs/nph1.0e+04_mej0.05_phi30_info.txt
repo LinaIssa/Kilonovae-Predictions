@@ -1,0 +1,97 @@
+Timestep 1 out of 75 finished (0.10 days). Time: 130.088 
+Timestep 2 out of 75 finished (0.30 days). Time: 288.542 
+Timestep 3 out of 75 finished (0.50 days). Time: 409.363 
+Timestep 4 out of 75 finished (0.70 days). Time: 490.094 
+Timestep 5 out of 75 finished (0.90 days). Time: 579.254 
+Timestep 6 out of 75 finished (1.10 days). Time: 653.611 
+Timestep 7 out of 75 finished (1.30 days). Time: 726.214 
+Timestep 8 out of 75 finished (1.50 days). Time: 785.406 
+Timestep 9 out of 75 finished (1.70 days). Time: 853.931 
+Timestep 10 out of 75 finished (1.90 days). Time: 915.464 
+Timestep 11 out of 75 finished (2.10 days). Time: 968.997 
+Timestep 12 out of 75 finished (2.30 days). Time: 1012.850 
+Timestep 13 out of 75 finished (2.50 days). Time: 1042.982 
+Timestep 14 out of 75 finished (2.70 days). Time: 1078.151 
+Timestep 15 out of 75 finished (2.90 days). Time: 1116.891 
+Timestep 16 out of 75 finished (3.10 days). Time: 1152.191 
+Timestep 17 out of 75 finished (3.30 days). Time: 1187.714 
+Timestep 18 out of 75 finished (3.50 days). Time: 1211.208 
+Timestep 19 out of 75 finished (3.70 days). Time: 1238.177 
+Timestep 20 out of 75 finished (3.90 days). Time: 1255.235 
+Timestep 21 out of 75 finished (4.10 days). Time: 1273.218 
+Timestep 22 out of 75 finished (4.30 days). Time: 1283.773 
+Timestep 23 out of 75 finished (4.50 days). Time: 1292.012 
+Timestep 24 out of 75 finished (4.70 days). Time: 1299.390 
+Timestep 25 out of 75 finished (4.90 days). Time: 1305.441 
+Timestep 26 out of 75 finished (5.10 days). Time: 1313.110 
+Timestep 27 out of 75 finished (5.30 days). Time: 1317.548 
+Timestep 28 out of 75 finished (5.50 days). Time: 1321.196 
+Timestep 29 out of 75 finished (5.70 days). Time: 1325.265 
+Timestep 30 out of 75 finished (5.90 days). Time: 1328.730 
+Timestep 31 out of 75 finished (6.10 days). Time: 1331.890 
+Timestep 32 out of 75 finished (6.30 days). Time: 1335.233 
+Timestep 33 out of 75 finished (6.50 days). Time: 1336.872 
+Timestep 34 out of 75 finished (6.70 days). Time: 1338.813 
+Timestep 35 out of 75 finished (6.90 days). Time: 1341.825 
+Timestep 36 out of 75 finished (7.10 days). Time: 1343.433 
+Timestep 37 out of 75 finished (7.30 days). Time: 1344.742 
+Timestep 38 out of 75 finished (7.50 days). Time: 1345.984 
+Timestep 39 out of 75 finished (7.70 days). Time: 1347.693 
+Timestep 40 out of 75 finished (7.90 days). Time: 1348.754 
+Timestep 41 out of 75 finished (8.10 days). Time: 1350.505 
+Timestep 42 out of 75 finished (8.30 days). Time: 1351.468 
+Timestep 43 out of 75 finished (8.50 days). Time: 1352.980 
+Timestep 44 out of 75 finished (8.70 days). Time: 1353.845 
+Timestep 45 out of 75 finished (8.90 days). Time: 1354.852 
+Timestep 46 out of 75 finished (9.10 days). Time: 1355.445 
+Timestep 47 out of 75 finished (9.30 days). Time: 1356.112 
+Timestep 48 out of 75 finished (9.50 days). Time: 1356.990 
+Timestep 49 out of 75 finished (9.70 days). Time: 1357.744 
+Timestep 50 out of 75 finished (9.90 days). Time: 1358.524 
+Timestep 51 out of 75 finished (10.10 days). Time: 1359.084 
+Timestep 52 out of 75 finished (10.30 days). Time: 1359.693 
+Timestep 53 out of 75 finished (10.50 days). Time: 1360.342 
+Timestep 54 out of 75 finished (10.70 days). Time: 1360.934 
+Timestep 55 out of 75 finished (10.90 days). Time: 1361.514 
+Timestep 56 out of 75 finished (11.10 days). Time: 1362.091 
+Timestep 57 out of 75 finished (11.30 days). Time: 1362.763 
+Timestep 58 out of 75 finished (11.50 days). Time: 1363.248 
+Timestep 59 out of 75 finished (11.70 days). Time: 1363.858 
+Timestep 60 out of 75 finished (11.90 days). Time: 1364.350 
+Timestep 61 out of 75 finished (12.10 days). Time: 1364.727 
+Timestep 62 out of 75 finished (12.30 days). Time: 1365.138 
+Timestep 63 out of 75 finished (12.50 days). Time: 1365.633 
+Timestep 64 out of 75 finished (12.70 days). Time: 1366.020 
+Timestep 65 out of 75 finished (12.90 days). Time: 1366.485 
+Timestep 66 out of 75 finished (13.10 days). Time: 1366.862 
+Timestep 67 out of 75 finished (13.30 days). Time: 1367.216 
+Timestep 68 out of 75 finished (13.50 days). Time: 1367.651 
+Timestep 69 out of 75 finished (13.70 days). Time: 1367.976 
+Timestep 70 out of 75 finished (13.90 days). Time: 1368.287 
+Timestep 71 out of 75 finished (14.10 days). Time: 1368.608 
+Timestep 72 out of 75 finished (14.30 days). Time: 1368.942 
+Timestep 73 out of 75 finished (14.50 days). Time: 1369.237 
+Timestep 74 out of 75 finished (14.70 days). Time: 1369.497 
+Timestep 75 out of 75 finished (14.90 days). Time: 1369.737 
+
+0 real packets thermalised in the inner region
+615 real packets were killed as they travelled in a high-opacity cell 
+
+ ---------- OBSERVER 1 (costh = 0.00, phi = 0.0) -----------
+5.48e+06 virtual packets arrived at the observer
+- 9.82e+03 (0.18%) arrived directly after creation
+- 5.46e+06 (99.75%) were scattered by a continuum interaction
+- 3.74e+03 (0.07%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 2 (costh = 1.00, phi = 0.0) -----------
+5.48e+06 virtual packets arrived at the observer
+- 9.79e+03 (0.18%) arrived directly after creation
+- 5.46e+06 (99.75%) were scattered by a continuum interaction
+- 3.73e+03 (0.07%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+Total time: 1369.737 
+
