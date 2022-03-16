@@ -1,0 +1,75 @@
+#AT2017gfo - compiled photometry - compiled by S.J. Smartt, and described and used in Coughlin et al. 2018, MNRAS, 480, 3871
+#============================================================================================================================
+#
+#If you use this table, you must cite the papers listed below as the
+#original data sources. You are not permitted to cite me as "private
+#communication" or to cite the ENGRAVE website as the source of the
+#data, or cite the Coughlin et al. paper in lieu aof these papers, or
+#any other third party source. Our Coughlin et al paper merely used these and
+#described why and how, it is not the source of the data and should not
+#be cited as such. 
+#
+#All these original papers must be cited if you use this table of photometry. 
+#
+#
+#Andreoni et al. 2017,  PASA, 34, e069
+#Arcavi et al. 2017, , Nature, 551, 64
+#Chornock et al. 2017,  ApJ, 848, L19
+#Cowperthwaite et al. 2017; ApJ, 848, L17
+#Drout et al. 2017, Science, 358, 1570
+#Evans et al. 2017, , Science, 358, 1565
+#Kasliwal et al. 2017, Science, 358, 1559
+#Tanvir et al. 2017,  ApJ, 848, L27
+#Pian et al. 2017, Nature, 551, 67
+#Troja et al. 2017,  Nature, 551, 71
+#Smartt et al. 2017, Nature, 551, 75
+#Utsumi et al. 2017,  PASJ, 69, 101
+#Valenti et al. 2017, ApJ, 848, L24
+#
+#S.J. Smartt 2019-01-11 
+#==================================================================
+#
+#
+#
+##Swift : These are the AB mags that Giorgos Leloudas used for the updated Lbol calc
+## BB fits and Lbol calc (full integration under the SED, as explained in Coughlin et al. 2018) 
+##   MJD.      Phase. UVW2   (err) UVM2  (err)  UVW1  (err)     U     err    i      err    z      err
+#57983.16264   0.642  21.13  0.23  21.12  0.22  19.46  0.11   18.19   0.09  17.18  0.08  17.22   0.08
+#57983.56250   1.042  21.45  9999  22.52  0.50  20.21  0.21   19.00   0.16  17.52  0.07  17.47   0.07
+#
+##Ground and HST. The K-band GROND data have been corrected from those published originally in Smartt et al.
+##The corrected mags use the K-band VHS as reference, as explained on http://www.pessto.org/index.py?pageId=60
+## Giorgos sed these for BB fits and Lbol calc (full integration under the SED, as explained in Coughlin et al. 2018) 
+##MJD             Phase    U	U_err	g       g_err	r	r_err	i       i_err	z        z_err	y	y_err	Tel       Phase    J	J_err	H	H_err	K_s	K_err	Telescope
+57983.0         0.467   NaN     NaN     17.41   0.02    17.56   0.04    17.48   0.03    17.59   0.03    17.46   0.01    various     0.467    17.88   0.03    18.26	0.15    18.62	0.11     4star/VISTA/GS
+57983.23125	0.696	NaN	NaN	NaN	NaN	NaN	NaN	17.24	0.06	17.26	0.06	17.38	0.10	PS1       0.696            NaN     NaN     NaN	NaN     NaN     NaN
+57983.42	0.88	NaN     NaN     17.46	0.08	17.32	0.07    17.42   0.05    NaN	NaN	NaN	NaN	Skymapper      0.88       NaN     NaN     NaN	NaN     NaN     NaN
+57983.75833	1.218	NaN	NaN	18.05	0.12	17.89	0.03	NaN	NaN	NaN	NaN	NaN	NaN	1.5B/LCO      1.218        17.51	0.03 	17.64	0.04	17.91	0.05    Sirius 
+57983.96875	1.427	NaN	NaN	18.49	0.04	17.99	0.01	17.85	0.05	17.72	0.03	17.32	0.03	GROND/DECam  1.427    17.58	0.07	17.64	0.08	17.87	0.12	GROND	
+57984.04811	1.505	20.25	0.29	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NTT       1.505            NaN     NaN     NaN	NaN     NaN     NaN 
+57984.23125	1.686	NaN	NaN	NaN	NaN	NaN	NaN	17.87	0.06	17.78	0.07	17.58	0.11	PS1     1.686           NaN     NaN     NaN	NaN     NaN     NaN
+57984.37 	1.82    NaN     NaN   	19.28	0.17    18.34	0.11    18.32   0.14    NaN	NaN	NaN	NaN	Skymapper/LCO    1.82         NaN     NaN     NaN	NaN     NaN     NaN
+57984.76111	2.211	NaN	NaN	19.87	0.21	18.80	0.07	18.3	0.15	18.25	0.3	NaN	NaN	1.5B/LCO     2.211         17.69	0.04    17.52	0.04    17.61	0.04    Sirius
+57984.96892	2.417	19.6	9999	20.19	0.11	19.13	0.17	18.58	0.04	18.33	0.06	17.77	0.03	GROND        2.417    17.73	0.09	17.64	0.08	17.73	0.09	GROND	
+57985.23125	2.676	NaN	NaN	NaN	NaN	NaN	NaN	18.44	0.09	18.31	0.07	18.08	0.11	PS1       2.676            NaN     NaN     NaN	NaN     NaN     NaN
+57985.38	2.83    NaN     NaN     20.43	0.16 	19.34	0.09    18.62   0.07    NaN	NaN	NaN	NaN	Skymapper/LCO   2.83       NaN     NaN     NaN	NaN     NaN     NaN
+57985.77639	3.216	NaN	NaN	NaN	NaN	19.64	0.13	18.80	0.2	18.42	0.34    NaN	NaN	1.5B/LCO    3.217          17.78	0.05    17.57	0.04    17.55	0.05    Sirius
+57985.97433	3.412	NaN	NaN	21.13	0.16	19.81	0.02	19.03	0.01	18.74	0.02	18.05	0.03	GROND/DECam  3.413    17.95	0.07	17.72	0.07	17.69	0.08	GROND	
+57986.23556	3.671	NaN	NaN	NaN	NaN	NaN	NaN	17.8	9999 	18.10	0.30	 17.7	9999 	PS1       3.671            NaN     NaN     NaN	NaN     NaN     NaN
+57986.71        4.14    NaN	NaN	NaN	NaN     20.30   0.31    NaN	NaN	NaN	NaN	NaN	NaN	LCO        4.14           18.13	0.12 17.77	0.04	17.57	0.07    SIRIUS 
+57986.97426	4.402	NaN	NaN	21.58	0.22	20.53	0.05	19.51	0.04	19.07	0.06	18.35	0.03	GROND         4.403   18.17	0.07	18.02	0.10	17.67	0.08	GROND	
+57987.98        5.4     NaN	NaN     NaN	NaN     20.79	0.24    19.55	0.18    19.17	0.11    18.83	0.18    DECcam    5.4            NaN     NaN     NaN	NaN     NaN     NaN
+57988.99        6.4     NaN	NaN     22.08	0.52    20.95   0.35    NaN	NaN     NaN	NaN     19.06   0.31    DECam         6.4     18.74   0.04    NaN	NaN     17.84	0.03    VISTA  
+57990.00	7.4     NaN	NaN     23.28	0.34    21.23	0.11    20.54	0.05    19.89	0.05	19.44	0.05    DECam         7.383   19.26	0.28	18.74	0.06	18.27	0.39	GROND	
+57991.00        8.4     NaN	NaN     NaN	NaN     21.95	0.18    20.72	0.06    20.40	0.06    20.06	0.07    DECam         8.358   19.64	0.11	19.26	0.26	18.43	0.15	GROND	
+57992.00	9.4     NaN	NaN     NaN	NaN     22.2	0.04    21.37	0.06    21.19	0.07    20.78	0.11    DECam/VIMOS   9.350   20.23	0.10	19.66	0.14	18.50	0.20	GROND	
+57993.00	10.4    NaN	NaN     NaN	NaN     22.45	0.07    22.38	0.10	22.06	0.13	21.67	0.21	DECam/VIMOS   10.386  21.02	0.22	20.17	0.34	18.51	0.15	GROND	
+57993.94	11.3    NaN     NaN     24.1 	0.2  	23.0	0.2  	22.5	0.2 	NaN	NaN     NaN	NaN     HST           11.322   NaN    NaN     20.05	0.20	19.30	0.35    NTT/GROND 
+57994.97        12.31   NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     ?     12.31                 NaN    NaN     20.57	0.19    19.40   0.14    NTT/GS 
+57995.97        13.21   NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     22.3    0.28    NaN     NaN     VIMOS      13.21            NaN    NaN     21.01     0.14    19.67	0.20    GS/NTT
+57996.99        14.32   NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     23.34   0.37    NaN     NaN     FORS        14.32           NaN    NaN     21.63	0.36    20.02   0.13    GS/VISTA 
+57997.979       15.30   NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN      ?     15.30                 NaN    NaN     NaN	NaN	20.17   0.08    GS/Magellan (average)
+57999.98	17.28   NaN	NaN	NaN	NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN    ?     17.28                   NaN    NaN     NaN	NaN	20.77   0.13    HAWKI
+58000.966	18.26   NaN	NaN	NaN	NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN    ?     18.26                   NaN    NaN     NaN	NaN	20.76   0.35    NTT
+58003.969       21.23   NaN	NaN	NaN	NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN    ?      21.23                  NaN    NaN     NaN	NaN	21.46   0.08    HAWKI
+58007.969       25.19   NaN	NaN	NaN	NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN     NaN    ?        25.19                NaN    NaN     NaN	NaN	22.06   0.22    HAWKI

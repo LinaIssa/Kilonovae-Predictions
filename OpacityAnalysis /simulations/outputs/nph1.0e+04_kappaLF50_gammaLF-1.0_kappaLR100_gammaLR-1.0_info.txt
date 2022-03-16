@@ -1,0 +1,44 @@
+Timestep 1 out of 30 finished (0.25 days). Time: 46.627 
+Timestep 2 out of 30 finished (0.75 days). Time: 60.436 
+Timestep 3 out of 30 finished (1.25 days). Time: 63.518 
+Timestep 4 out of 30 finished (1.75 days). Time: 136.895 
+Timestep 5 out of 30 finished (2.25 days). Time: 173.889 
+Timestep 6 out of 30 finished (2.75 days). Time: 214.342 
+Timestep 7 out of 30 finished (3.25 days). Time: 251.736 
+Timestep 8 out of 30 finished (3.75 days). Time: 322.719 
+Timestep 9 out of 30 finished (4.25 days). Time: 371.408 
+Timestep 10 out of 30 finished (4.75 days). Time: 401.013 
+Timestep 11 out of 30 finished (5.25 days). Time: 419.103 
+Timestep 12 out of 30 finished (5.75 days). Time: 493.305 
+Timestep 13 out of 30 finished (6.25 days). Time: 546.980 
+Timestep 14 out of 30 finished (6.75 days). Time: 583.341 
+Timestep 15 out of 30 finished (7.25 days). Time: 614.356 
+Timestep 16 out of 30 finished (7.75 days). Time: 636.712 
+Timestep 17 out of 30 finished (8.25 days). Time: 651.898 
+Timestep 18 out of 30 finished (8.75 days). Time: 666.005 
+Timestep 19 out of 30 finished (9.25 days). Time: 675.499 
+Timestep 20 out of 30 finished (9.75 days). Time: 684.853 
+Timestep 21 out of 30 finished (10.25 days). Time: 692.292 
+Timestep 22 out of 30 finished (10.75 days). Time: 698.021 
+Timestep 23 out of 30 finished (11.25 days). Time: 702.708 
+Timestep 24 out of 30 finished (11.75 days). Time: 706.624 
+Timestep 25 out of 30 finished (12.25 days). Time: 709.246 
+Timestep 26 out of 30 finished (12.75 days). Time: 712.466 
+Timestep 27 out of 30 finished (13.25 days). Time: 714.862 
+Timestep 28 out of 30 finished (13.75 days). Time: 716.625 
+Timestep 29 out of 30 finished (14.25 days). Time: 718.346 
+Timestep 30 out of 30 finished (14.75 days). Time: 719.634 
+
+0 real packets thermalised in the inner region
+1.87e+03 real packets were killed as they travelled in a high-opacity cell 
+
+ ---------- OBSERVER 1 (costh = 0.96, phi = 0.0) -----------
+4.16e+06 virtual packets arrived at the observer
+- 9.75e+03 (0.23%) arrived directly after creation
+- 4.15e+06 (99.76%) were scattered by a continuum interaction
+- 412 (0.01%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+Total time: 719.635 
+
