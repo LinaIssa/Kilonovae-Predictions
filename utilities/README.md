@@ -10,4 +10,3 @@ In this repository are gathered all the python scripts and notebooks used to car
 - energy_depo.ipynb: implementing a new physical model to improve the accurary of POSSIS 
 - temp_profile.ipynb and temp_new_profile.ipynb: plotting the temperature profile from POSSIS results 
 - stage2.py and the updated version plotUtilities.py: useful graphics functionnalities that are used in my scripts and notebooks 
-- 
