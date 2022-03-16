@@ -1,0 +1,136 @@
+\begin{thebibliography}{10}
+
+\bibitem{kilonovaDetection}
+B.~P. {Abbott} {\em et~al.},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2017ApJ...848L..12A}{Multi-messenger
+  Observations of a Binary Neutron Star Merger}},'' {\em The Astrophysical
+  Journal}, vol.~848, p.~L12, Oct. 2017.
+
+\bibitem{prediction_Kn}
+D.~{Eichler}, M.~{Livio}, T.~{Piran}, and D.~N. {Schramm},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/1989Natur.340..126E}{Nucleosynthesis,
+  neutrino bursts and {\ensuremath{\gamma}}-rays from coalescing neutron
+  stars}},'' {\em Nature}, vol.~340, pp.~126--128, July 1989.
+
+\bibitem{POSSIS_2015}
+M.~{Bulla}, S.~A. {Sim}, {\em et~al.},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2015MNRAS.450..967B}{Polarization
+  spectral synthesis for Type Ia supernova explosion models}},'' {\em Monthly
+  Notices of the Royal Astronomical Society}, vol.~450, pp.~967--981, June
+  2015.
+
+\bibitem{POSSIS_2019}
+M.~{Bulla},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5037B}{POSSIS:
+  predicting spectra, light curves, and polarization for multidimensional
+  models of supernovae and kilonovae}},'' {\em Monthly Notices of the Royal
+  Astronomical Society}, vol.~489, pp.~5037--5045, Nov. 2019.
+
+\bibitem{MHD}
+M.~M. {Kasliwal}, E.~{Nakar}, {\em et~al.},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2017Sci...358.1559K}{Illuminating
+  gravitational waves: A concordant picture of photons from a neutron star
+  merger}},'' {\em Science}, vol.~358, pp.~1559--1565, Dec. 2017.
+
+\bibitem{chirp}
+B.~P. Abbott {\em et~al.},
+  ``{\href{https://link.aps.org/doi/10.1103/PhysRevLett.119.161101}{GW170817:
+  Observation of Gravitational Waves from a Binary Neutron Star Inspiral}},''
+  {\em Phys. Rev. Lett.}, vol.~119, p.~161101, Oct 2017.
+
+\bibitem{KN}
+B.~D. {Metzger}, ``{Kilonovae},'' {\em Living Reviews in Relativity}, vol.~23,
+  p.~1, Dec. 2019.
+
+\bibitem{Nakar}
+E.~{Nakar}, ``{\href{https://ui.adsabs.harvard.edu/abs/2019arXiv191205659N}{The
+  electromagnetic counterparts of compact binary mergers}},'' {\em arXiv
+  e-prints}, p.~arXiv:1912.05659, Dec. 2019.
+
+\bibitem{ejecta}
+D.~{Kasen}, B.~{Metzger}, {\em et~al.},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2017Natur.551...80K}{Origin of the
+  heavy elements in binary neutron-star mergers from a gravitational-wave
+  event}},'' {\em Nature}, vol.~551, pp.~80--84, Nov. 2017.
+
+\bibitem{Barnes_2016}
+J.~Barnes, D.~Kasen, {\em et~al.},
+  ``\href{https://doi.org/10.3847%2F0004-637x%2F829%2F2%2F110}{{RADIOACTIVITY}
+  {AND} {THERMALIZATION} {IN} {THE} {EJECTA} {OF} {COMPACT} {OBJECT} {MERGERS}
+  {AND} {THEIR} {IMPACT} {ON} {KILONOVA} {LIGHT} {CURVES}},'' {\em The
+  Astrophysical Journal}, vol.~829, p.~110, sep 2016.
+
+\bibitem{tanaka}
+M.~{Tanaka} and K.~{Hotokezaka},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2013ApJ...775..113T}{Radiative
+  Transfer Simulations of Neutron Star Merger Ejecta}},'' {\em The
+  Astrophysical Journal}, vol.~775, p.~113, Oct. 2013.
+
+\bibitem{Lucy_MonteCarlo}
+L.~B. {Lucy},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/1999A&A...344..282L}{Computing
+  radiative equilibria with Monte Carlo techniques}},'' {\em Astronomy and
+  Astrophysics}, vol.~344, pp.~282--288, Apr. 1999.
+
+\bibitem{matter_distribution}
+K.~{Kawaguchi}, M.~{Shibata}, {\em et~al.},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2018ApJ...865L..21K}{Radiative
+  Transfer Simulation for the Optical and Near-infrared Electromagnetic
+  Counterparts to GW170817}},'' {\em The Astrophysical Journal Letters},
+  vol.~865, p.~L21, Oct. 2018.
+
+\bibitem{Magee}
+M.~R. {Magee}, S.~A. {Sim}, {\em et~al.},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2018A&A...614A.115M}{Modelling the
+  early time behaviour of type Ia supernovae: effects of the $^{56}$Ni
+  distribution}},'' {\em Astronomy \& Astrophysics}, vol.~614, p.~A115, June
+  2018.
+
+\bibitem{kawaguchi}
+K.~{Kawaguchi}, M.~{Shibata}, and M.~{Tanaka},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2018ApJ...865L..21K}{Radiative
+  Transfer Simulation for the Optical and Near-infrared Electromagnetic
+  Counterparts to GW170817}},'' {\em The Astrophysical Journal}, vol.~865,
+  p.~L21, Oct. 2018.
+
+\bibitem{RadioObservations}
+D.~{Dobie}, D.~L. {Kaplan}, K.~{Hotokezaka}, T.~{Murphy}, A.~{Deller},
+  G.~{Hallinan}, and S.~{Nissanke},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2020MNRAS.494.2449D}{Constraining
+  properties of neutron star merger outflows with radio observations}},'' {\em
+  Monthly Notices of the Royal Astronomical Society}, vol.~494, pp.~2449--2464,
+  Apr. 2020.
+
+\bibitem{perego}
+A.~{Perego}, D.~{Radice}, and S.~{Bernuzzi},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2017ApJ...850L..37P}{AT 2017gfo:
+  An Anisotropic and Three-component Kilonova Counterpart of GW170817}},'' {\em
+  The Astrophysical Journal}, vol.~850, p.~L37, Dec. 2017.
+
+\bibitem{first_paper}
+T.~Dietrich, M.~W. Coughlin, {\em et~al.}, ``New constraints on the
+  supranuclear equation of state and the hubble constant from nuclear physics
+  -- multi-messenger astronomy,'' 2020.
+
+\bibitem{CoughlinMethod}
+M.~{Coughlin}, T.~{Dietrich}, K.~{Kawaguchi}, S.~{Smartt}, C.~{Stubbs}, and
+  M.~{Ujevic},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2017ApJ...849...12C}{Toward Rapid
+  Transient Identification and Characterization of Kilonovae}},'' {\em The
+  Astrophysical Journal}, vol.~849, p.~12, Nov. 2017.
+
+\bibitem{GPR}
+M.~W. {Coughlin}, T.~{Dietrich}, Z.~{Doctor}, {\em et~al.},
+  ``{\href{https://ui.adsabs.harvard.edu/abs/2018MNRAS.480.3871C}{Constraints
+  on the neutron star equation of state from AT2017gfo using radiative transfer
+  simulations}},'' {\em Monthly Notices of the Royal Astronomical Society},
+  vol.~480, pp.~3871--3878, Aug. 2018.
+
+\bibitem{OpacRaw}
+M.~{Bulla}, S.~{Covino}, K.~{Kyutoku}, M.~{Tanaka}, J.~R. {Maund}, F.~{Patat},
+  K.~{Toma}, K.~{Wiersema}, J.~{Bruten}, Z.~P. {Jin}, and V.~{Testa}, ``{\href
+  {https://ui.adsabs.harvard.edu/abs/2019NatAs...3...99B}{The origin of
+  polarization in kilonovae and the case of the gravitational-wave counterpart
+  AT 2017gfo}},'' {\em Nature Astronomy}, vol.~3, pp.~99--106, Mar. 2019.
+
+\end{thebibliography}

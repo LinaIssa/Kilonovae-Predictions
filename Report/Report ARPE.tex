@@ -1,0 +1,653 @@
+\documentclass[a4paper, twoside, 11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{lmodern}
+\usepackage[portrait, margin = 0.7 in]{geometry}   %pour avoir plus de marge
+\usepackage{booktabs}
+\usepackage{cancel}
+\usepackage{ragged2e} % use of  \justify 
+\usepackage{colortbl}
+\usepackage{csquotes}
+\usepackage{datatool}
+\usepackage{helvet}
+\usepackage{mathpazo}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{SIunits}
+\usepackage{multicol}
+\usepackage{amsmath}      %des trucs de maths en plus
+%\usepackage{amssymb}	  %pour avoir plus de symboles mathématiques
+\usepackage{url}
+\usepackage{mathrsfs}  
+\usepackage{dutchcal}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption,subcaption}
+\usepackage[inline]{enumitem}
+\usepackage{calrsfs}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\graphicspath{{./pictures/}}    %dir de tes images
+%Les deux suivants servent à faire des sous figures dans les figures avec leur propre légende
+\usepackage{float}		
+\usepackage{tablefootnote}	  
+%\usepackage{gensymb}
+\usepackage{makecell}
+\usepackage{bm}     %pour avoir du texte en gras dans les équations ±÷
+\usepackage{textpos}
+\numberwithin{equation}{section}
+\usepackage[rightcaption]{sidecap}
+\DeclareMathOperator{\arccosh}{arccosh}  %si tu veux créer des nouveaux opérateurs de math
+\pagestyle{plain}
+\newcommand{\thesisauthor}{\textsc{Issa} Lina}
+\newcommand{\mb}[1]{\textcolor{blue}{#1}}
+\newcommand{\citations}[1]{\textcolor{green}{#1}}
+\newcommand{\redflag}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{50pt}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}	
+\begin{minipage}{0.50\textwidth}
+    \begin{flushleft}
+    \includegraphics[scale = 0.40]{pictures/logo_ens_cachan.png}
+    \end{flushleft}
+\end{minipage}
+\begin{minipage}{0.40\textwidth} 
+    \begin{flushright}
+   \includegraphics[scale = 0.18]{pictures/logo_uni.pdf}
+    \end{flushright}
+\end{minipage}
+\vspace{100pt}
+
+
+%\textsc{\huge Ecole Normale Supérieure Paris-Saclay}\\[1.5 cm]
+%\textsc{\LARGE ARPE - 2019/2020}
+
+
+\vspace*{10 pt}
+
+\HRule \\[1 cm]	
+{ \huge \bfseries Radiative transfer code for kilonova modelling}\\[0.4cm]	 																	
+\HRule \\[1cm]	
+
+
+\begin{center}
+\includegraphics[width=0.5\paperwidth]{pictures/merger_NS.jpeg}
+\end{center}
+\begin{textblock*}{4cm}(10cm,-0.8cm)
+\textcolor{white}{\tiny{credits: Digital drawing by Robin Dienel}}
+\end{textblock*}
+%
+
+
+\vspace{10pt}
+
+\LARGE \textsc{Lina Issa} \\
+\vspace{10 pt}
+\text{\LARGE 1 October 2019 - 15 July 2020}\\ 
+
+\vspace{10 pt}
+\mbox{\LARGE Under the supervision of \textsc{Mattia Bulla}}
+
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\pagenumbering{roman}
+
+\hspace{\parindent}		The merger of two compact objects such as neutron stars or black holes generates not only gravitational waves but is also followed by an electromagnetic counterpart which covers a broad spectrum (from gamma rays to radio emission). This electromagnetic signature gives a complementary insight into the physics of merging binaries. Getting different signals from an unique source is a golden opportunity for astronomers working in high-energy astronomy.  In this new multi-messenger era, information can be conveyed by different types of messengers: photons, gravitational waves and even neutrino for supernova-like events for instance.\\
+
+To date, the combined gravitational and electromagnetic signal rising from the same source has been only observed once in 2017. Figure \ref{fig:chirp} illustrates the conjoined detection of gravitational waves by the two detectors LIGO, Laser Interferometer Gravitational-Wave Observatory,  and the european detector based in Italy, Virgo. The gravitational event, dubbed  GW170817\footnote{\label{foot:names}GW170817 : name attributed to the event of the detection of gravitational waves on August, $\rm{17^{th}}$ 2017} was followed 
+\begin{enumerate*}[label=\roman*) ]
+\item  seconds later by a short gamma ray burst (GRBs), 
+\item hours later by a kilonova AT2017gfo \footnote{AT2017gfo: name of the electromagnetic counterpart to GW170817} and
+\item  days later by an afterglow in X-ray, optical and radio bands\cite{kilonovaDetection}.
+\end{enumerate*}
+  After the merger, GRBs are produced by the accretion of a massive disk onto the compact black hole or neutron star remnant. They are often followed by an afterglow, a non-thermal emission believed to be induced by the interaction of shock waves with the surrounding material from the interstellar medium. As the shock wave expands, the afterglow slides progressively into larger wavelengths (X-ray, optical and at last radio). Unlike GRBs, kilonovae are thermal emissions in ultraviolet (UV), optical and infrared (IR) that stem from the the radioactive decay of neutron rich nuclei synthesized in abundance in the ejecta. Powered by the heating induced by the radioactive decay of heavy elements, the ejected matter relaxes by emitting a thermal radiation. \\
+
+	Kilonovae were predicted in the late 80s by Eischler et al.\cite{prediction_Kn} and it was not until 2017 that they were first detected as an electromagnetic counterpart to the event GW170817. This observation was made possible thanks to large gravitational wave interferometers  (about 1km each arms) that  had been constructed in the last decades. Indeed, the detection of a kilonova can be tremendously facilitated by the detection of gravitational waves, which helps to pinpoint the localization in the sky of a source that can potentially give rise to a kilonova-like transient.  From the gravitational signal, some key characteristics of the source can already be retrieved such as the mass ratio\footnote{Usually defined as \( q=m_2/m_1\) with $m_1$ the mass of the larger object in a binary and $m_2$ the lesser mass.} of the binary system and its distance to us. If this first signal is followed by an electromagnetic counterpart in UV/optical/NIR bands, the host galaxy can then be pinned down.  For GW170817, the merging binary was hosted in NGC 4993 and the luminosity distance was estimated to be $\unit{40_{-14}^{+8}}{\mega pc}$ (90$\%$ confidence)\cite{kilonovaDetection}. \\
+	
+While LIGO and Virgo interferometers are in alert for the next gravitational wave event with electromagnetic signatures yet to be detected, the study of merging compact objects involving neutron stars has been widely developed by numerical simulations. In particular, radiative transfer codes are a tool of choice for kilonova modelling. First designed for thermonuclear supernova, radiative transfer codes are suitable to model thermal radiative transfer in an expanding medium with radioactive sources. However, unlike the matter ejected in a thermonuclear supernova, the ejecta at the origin of a kilonova event is believed to produce heavier elements , from $^{56}\rm{Ni}$ up to lanthanides and actinides.
+This different composition makes kilonova modelling more challenging. 
+
+%From the event of GW170817, the estimated merger rate is about $\unit{1500}{\giga pc^{-3} yr^{-1}}$. In \\
+%*************************************************************************
+\newpage
+\section*{Structure layout}
+\addcontentsline{toc}{section}{Structure layout}
+\hspace{\parindent}		In an introductory part, we investigate the different key ingredients involved in the physics of kilonova. After briefly depicting kilonova progenitors, we introduce the different processes at work, from the ejection mechanisms to the various sources of opacity. A brief overview of radiative transfer codes in general and of P\textsc{ossis} \footnote{Polarization Spectral Synthesized In Supernovae} in particular is given at the end of  S\textsc{ection} \ref{sec: kn_origin}.  We also describe the model grid of three components which has been adopted in this work.\\
+
+Previous versions of P\textsc{ossis} described in (Bulla 2015, \cite{POSSIS_2015}) and in (Bulla 2019, \cite{POSSIS_2019}) have a parametrized form of temperature assumed to be homogeneous throughout the whole ejecta and scaling as $T \propto t^{-\alpha}$ with $\alpha = 0.4 $ \cite{MHD}. In  S\textsc{ection} \ref{sec:TempWork}, we present a self-consistent way of computing the temperature for each cell of the grid and at each time step which is inferred from the density and the local energy deposition from the radioactive decay. \\
+
+A novel approach of treating the bound-bound opacity is described in S\textsc{ection} \ref{sec:OpacWork} where we provide an empirical model of opacity guided by the available atomic data and confronted to the observed light curve  AT2017fgo. In this inverse approach, we use tailored ejecta configurations to retrieve a model-independent treatment of the bound-bound opacity from the observations. \\
+
+Finally we give some prospects about the work done and anticipate on further investigations. 
+
+\begin{SCfigure}[0.6][h!]
+\includegraphics[width=0.6\textwidth]{pictures/LIGO_VIRGO.pdf}
+	\captionof{figure}[Detection of the gravitational wave GW170817]{The gravitational chirp as detected by the three interferometers and represented in lookback \cite{chirp}. 
+	Three interferometers were involved in the discovery of GW170817: LIGO-Hanford and LIGO-Livington in the United-States and Virgo in Italy (European collaboration). }
+	\label{fig:chirp}
+\end{SCfigure} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE,RO]{\textsl{\leftmark}}
+\fancyhead[RE,LO]{\thesisauthor}
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\listoffigures
+\listoftables
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{At the origin of kilonovae}
+\vspace{10pt}
+\label{sec: kn_origin}
+\pagenumbering{arabic}
+\subsection{Merger of two neutron stars}
+\label{subsec:merger}
+\hspace{\parindent}	Like thermonuclear supernovae (hereafter SNIa), kilonovae are transient events that are powered by the heat of a radioactive material in which a thermal emission escapes as an ultraviolet (UV), optical and infrared (IR) radiation. The typical luminosity of a kilonova event is $L_{\rm{KN}} \sim \unit{10^{40}}{erg.\second^{-1}}$, about 1000 times fainter than a SNIa.
+ While SNIa result from the explosion of one white dwarf {in a binary system} with another star (either {degenerate} or not\footnote{There is no consensus yet that  discriminates between these two channels.}),  kilonovae occur when one neutron star collides with another compact object, either a black hole or a neutron star \footnote{A black-hole/black-hole merger is unlikely to give rise to a thermal emission such as a kilonova \cite{KN}.Thus, hereafter we consider only  neutron star/neutron star  and neutron star/black-hole mergers}. \\
+ 
+ Neutron stars are one of the most compact objects after black holes. Indeed, they weigh about 1 to 3 $M_\odot$ for a size of around 10 km, with a density reaching up to $\unit{10^{18}}{\gram\per\centi\meter^3}$.  At its surface, the temperature can reach 100 000 K. 
+ %resulting in a compacity of  [\textcolor{red}{mettre ici une approximation}]. 
+These dead objects are formed after the explosion of a massive star \footnote{Stars with a mass superior to about 8 $M_\odot$in the main sequence phase.} into a core-collapse Supernova. This happens once the star has burned all its fuels up to the iron through successive nuclear fusion. At this stage, its core can no longer produce energy against the gravitational attraction so that it collapses into a compact object. The high pressure enriches the interior of the newly formed neutron star with neutrons by the neutronisation process: $p + e^- \longrightarrow n$. 
+Due to its fermionic character, neutrons can sustain the stability of its interior by the degeneracy pressure and thus put an end to the gravitational collapse, creating shock waves that expel matter around the dead star.  \\
+ \begin{wrapfigure}{r}{0.35\textwidth}
+\centering
+  \includegraphics[width=0.3
+  \textwidth]{pictures/pulsar.png}
+  \caption[Illustration of a pulsar ]{Schematic illustration of a pulsating neutron star with the magnetic field lines drawn in dashed and solid lines. }
+  \label{fig:pulsar}
+\end{wrapfigure}
+\indent These extreme objects have been for the first time observed by Jocelyn Bell in 1967. Due to their small size and extremely low luminosity, neutron stars are hard to detect. However, as a result of their formation, they are often highly spinned objects surrounded by a strong magnetic field (around $\unit{10^9}{\tesla}$). Charged particles can thus escape along the two poles forming jets of radio emission by synchrotron radiation. Since the magnetic axis is in the most cases not aligned with the rotational axis (see F\textsc{igure} \ref{fig:pulsar}), the neutron star when observed from {Earth} seems to emit radio pulses when {Earth} happens to be along those jets. {This} peculiar characteristic is the reason why they are called {\itshape{pulsar}}, for pulsating star. \\
+
+Neutron stars can also be detected in a binary (or even multiple) system, in which other behaviours can be displayed. If the neutron star has a main sequence-star or a white dwarf companion, the neutron star can {accrete} matter from its companion and form an  X-ray binary. If the companion is another compact object, either a neutron star or a black hole, the system can be detected in its final stage, with the release of energy both gravitationally and electromagnetically. Gravitationally,  for merging neutron stars distort the space-time fabric, creating riddles that propagate at the speed of light in the form of gravitational waves. Electromagnetically, for the matter ejected by the merger is irradiated by energetic photons. \\ 
+
+\newpage
+\subsection{Different mechanisms of ejection}
+\label{subsec:ejection}
+\hspace{\parindent}	 At the final stage of the inspiral phase, a large amount of matter is released, up to $10\%$ of the total binary masses settles around the remnant into a centrifugally supported disk and about 1$\%$ being ejected. These outflows of matter happen on different timescales and according to different mechanisms. \\
+
+\textit{Dynamical ejecta}\\
+
+On a timescale of milliseconds, tidal forces eject matter close to the orbital plane while a shock heated matter is expelled isotropically from the merging binary. These two types of mechanisms give birth to two different kinds of ejecta that differ in their composition, the tidally disrupted matter being richer in neutrons than the shock driven matter. 
+\begin{equation}
+  Y_{e} = \frac{\rm{number \ of \  protons}}{\rm{number \  of \ nucleons}}
+  \label{equa: electron_fraction}
+\end{equation}
+ $Y_e < 0.5$ is indicative of a highly neutron enriched ejecta. \\
+ 
+This drop of the neutron density far away from the orbital plane is related to the neutrino irradiation which increases with latitudes. Indeed, the shock driven wind undergoes strong neutrino irradiation which results in a decrease of the neutron density and an increase of the electron fraction defined in (\ref{equa: electron_fraction}). \\
+
+The dynamical ejecta carries out about $M_{\rm{dyn}} = 10^{-3}-10^{-2} M_{\odot}$ and moves at $v_{\rm{dyn}} = 0.1-0.3 c $. The electron density varies from 0.05 to 0.45, with the highest values being mostly concentrated into polar directions and the lowest in the equatorial plane. \\
+
+\textit{Wind ejecta}\\
+
+On longer timescales, up to $5 \%$ of matter from the accretion disk is isotropically ejected  around the remnant by neutrino irradiation. The wind outflow is sensitive to the fate of the remnant, whether a black hole is promptly formed or the remnant is instead a long-lived magnetar. Indeed its properties such as the mass ejected and the electron fraction are determined by the nature of the remnant. If a black hole is promptly formed, the amount of matter ejected from the disk is smaller than in case of a neutron star remnant. Broadly speaking, the higher the neutrino irradiation, the more massive the wind ejecta gets and the higher its electron fraction is. \\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\paperwidth]{pictures/model_ejecta_3_2.pdf}
+\caption[Geometry of kilonova]{Velocity grid in which a three components kilonova is represented. The two components of the dynamical ejecta are represented in blue and red and the wind outflow in green. The $\phi$ angle represents the opening angle of the lanthanide rich ejecta. This geometry has been used as input in the P\textsc{ossis} code throughout this work.}
+\label{fig:geometry}
+\end{figure}
+
+\textit{A geometry with three components} \\
+
+These three ejection mechanisms give birth to a three-components ejecta as described in F\textsc{igure} \ref{fig:geometry} where: \begin{enumerate}[label=\roman*)]
+    \item a blue ejecta is characterized by $Y_e\geq 0.25$
+    \item a red ejecta by $Y_e < 0.25$
+    \item a wind ejecta in which $Y_e$ depends on the neutrino irradiation, subjected to the nature of the remnant
+\end{enumerate}
+Regardless of the ejection mechanisms, dynamical and wind outflows settle into an homologous expansion, that is a material moving at the speed $v$ is located at a radius \(R = vt\) at any given time. 
+
+
+\subsection{Nucleosynthesis of heavy elements}
+\label{subsec:nucleo}
+\hspace{\parindent} Along with the core-collapse supernova,  the merger of two neutron stars provides a compelling  environment for the the nucleosynthesis of heavy elements (A>140) by rapid capture of neutrons (hereafter r-capture or r-process). While mergers of neutron stars are believed to happen less frequently than core-collapse supernovae, they are expected to produce a larger amount of heavy elements. Indeed, from generalizing the solar abundances of heavy elements, one can estimate the production rate of r-process elements in the Milky Way to be about $\unit{1}{M_\odot \  \mega yr^{-1}}$ \cite{Nakar}. Considering that the core-collapse supernova rate event is about $\sim 3$ per century, the r-process elements mass yield required to explain the galactic abundances is about $\unit{3 \times10^{-5}}{M_\odot}$ per event, while the corresponding number for NS/NS merger is about $\unit{10^{-3}-10^{-1}}{M_\odot}$. \\
+
+This nuclear transformation can only take place in an extremely hot environment with a large density of neutrons. In a merging neutron star, the neutron density is believed to be about $\sim \unit{10^{33}}{\centi\meter^{-3}}$. As a result, the expanding ejecta is enriched with heavy material whose abundance can be probed in spectral features retrieved from kilonovae \cite{ejecta}. \\
+
+These freshly synthesized r-process elements undergo radioactive decay that powers a supernova-like transient that peaks in about days (see equation~\eqref{equa:tpeak} in S\textsc{ection} \ref{subsec:opac}). The heating from radioactive decay products such as $\gamma$-rays, $\alpha$-particles, $\beta$-particles and fissions fragments depends on their kinetic energy and on the efficiency of the absorption by the ejecta through thermalization. It is found that the energy generation rate from r-process decay follows\cite{Barnes_2016}: 
+\begin{equation}
+\dot{\epsilon}_{rad}= \epsilon_0\ t^{-\eta}
+\label{equa:HeatingRate}
+\end{equation} 
+with \( \epsilon_0= \unit{10^{11}}{erg.\second.^{-1}\gram^{-1}}\), and \( \eta = 1.1-1.4\). \\
+
+The thermalization  accounts for the redistribution of the radioactive energy into the thermal background. More precisely,  this quantity is defined relatively to the decay particles and  depends on their energy-loss rates and on their initial kinetic energy .\\
+
+Thus, for any given particle type,  the thermalization rate can be expressed as: 
+\begin{equation}
+\dot{E}_{th,p}(t) = \epsilon_{th,p} (t) \  \dot{\epsilon}_{rad}(t)
+\end{equation} 
+with \( \dot{E}_{th,p}(t) \)  and \( \epsilon_{th,p}\) the thermalization rate and the thermalization coefficient of a given particle $p$, both depending on the thermalization timescale and on the density of the ejecta. In the thermalization model described in Barnes et al. \cite{Barnes_2016}, the energy-loss rates and the initial energy are held to be independent  of  the decay particles. \\
+
+The total thermalization efficiency can be expressed analytically as shown in equation (\ref{equa:total therma}) (see  F\textsc{igure} \ref{fig:differentEpsTherma} S\textsc{ection} \ref{subsec:tempLocal} for an illustration).  It is a time-dependent quantity that is sensitive to the repartition of the different decay channels throughout the ejecta and to its density. 
+\begin{equation}
+\epsilon_{th}(t) = 0.36 \left[ \exp(-at) + \frac{\ln(1 + 2bt^{d})}{2bt^d}\right]
+\label{equa:total therma}
+\end{equation} 
+where $a$ , $b$ and  $d$ are analytical parameters fit depending on the ejecta velocity and mass. 
+
+\subsection{Different sources of opacity}
+\label{subsec:opac}
+
+\hspace{\parindent}The nucleosynthesis described in S\textsc{ection} \ref{subsec:nucleo} enriches the ejecta with elements heavier than iron. As a result, the thermal energy infused by the merger and the radioactive heating in the ejecta cannot escape at early times as radiation. Indeed, the overall r-process rich ejecta interacts with the emitting radiation through various processes, namely electron scattering and absorption. \\
+
+These interactions between matter and radiation can be quantified by the optical depth $\tau_{\nu}$, a non-dimensional quantity that depends on the frequency of the radiation considered $\nu$, on the free path length $l_{\nu}$ and on the radius $R$ of the ejecta such as: 
+\begin{subequations}
+\label{equa:tau_et_meanPath}
+\begin{align}
+\tau_\nu (r) =&  \int_{r}^R \frac{dr'}{l_\nu}  \label{equa:def_tau} \\
+ l_{\nu} =& 1/(\rho \times \kappa_\nu)
+ \label{equa:def_freePath} 
+\end{align}
+\end{subequations}
+with the opacity $\kappa_{\nu} $ of the ejecta. 
+Given the definition (\ref{equa:def_tau}) , an ejecta with $\tau_\nu\ll 1$ is considered as transparent or {\itshape{optically thin}}, while for $\tau_\nu\gg 1$, the ejecta is on the contrary opaque, so to speak {\itshape{optically thick}}.\\
+
+At early times, the kilonova ejecta is optically thick so that the emitting radiation cannot escape. Indeed, under a one-zone model approximation, one can calculate the characteristic timescale at which the radiation can escape. Substituting the expression of $l_\nu$ given in (\ref{equa:def_freePath}) into the equation (\ref{equa:def_tau}) at $r=0$ yields \(\tau = \rho \kappa R\), where $\rho$ can be expressed as \(\rho ={3M}\per{(4\pi R^3)} \). With $R=vt$ (see S\textsc{ection} \ref{subsec:ejection}), the optical depth can be written as:
+\begin{align}
+\tau =& \frac{3M\kappa}{4\pi(vt)^2}
+\end{align}
+The photons can escape at the diffusion timescale $\tau_{\rm{diff}}$, which is related to the optical depth as follows: 
+\begin{align}
+t_{\rm{diff}}  =& \frac{R\tau}{c}  = \frac{3M\kappa}{4\pi c v t } 
+\end{align}
+At $t<t_{\rm{diff}}$, the radiation is trapped in the expanding ejecta and is subjected to adiabatic losses\cite{Nakar}. The radiation can only escape at $t=t_{\rm{diff}}$ which gives the following definition of $t_{\rm{peak}}$:
+\begin{align}
+t_{\rm{peak}}=& \sqrt{\frac{3M\kappa}{4\pi v c }}
+\label{equa:tpeak}
+\end{align}
+At $t = t_{\rm{peak}}$, the ejecta has expanded enough for the radiation to escape. 
+For $\kappa \sim \unit{1-100}{\square{\centi\meter}\gram^{-1}}$, $t_{\rm{peak}}=1\ \rm{day}-1\  \rm{week}$. \\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{pictures/opac_tanaka_t1.pdf}
+\caption[Line transitions in r-process material]{Bound-bound opacities in the red and blue kilonovae  at 1.5 days after the merger as a function of the wavelength. These opacities are obtained by atomic structure calculations performed in Tanaka et al. \cite{tanaka}} %and used in \textcolor{green}{Bulla, 2019}}.
+\label{fig:opac_tanaka}
+\end{figure}
+
+The free path length is connected to the density of the ejecta $\rho$ and to its opacity $\kappa_\nu$  (${\square\meter\,\kilo\gram^{-1}}$) as shown in equation (\ref{equa:def_freePath}). 
+The higher the opacity, the more the radiation interacts with matter either through 
+\begin{enumerate*}[label=\roman*)]
+	\item  a scattering event,
+	\item  an absorption event including bound-free interaction (photoionization), free-free interaction (bremsstrahlung) and bound-bound interaction (line transitions). 
+\end{enumerate*} In a kilonova ejecta, the two dominant sources of opacities are the Thomson scattering and the bound-bound opacity. The first one describes the scattering of photons upon free electrons and can be simply expressed as: 
+\begin{equation}
+    \kappa = \frac{\sigma_T}{\mu_e m_p}
+\end{equation}
+where $\sigma_T$ is the Thomson cross-section, $\mu_e$, the mean mass for electrons and $m_p$ the proton mass. \\
+\begin{wrapfigure}{l}{0.5\textwidth}
+\centering
+\includegraphics[width=0.45\textwidth]{pictures/lc_11obs.pdf}
+\caption[Light curves for different viewing angles]{Light curves for 11 different observers, from a face-on  to an edge on view, in the g band produced by P\textsc{ossis} (version described in \cite{POSSIS_2019}).}
+\label{fig:observationsLC}
+\end{wrapfigure}
+
+The second one involves bound-bound transitions of the freshly synthesized r-process elements. F\textsc{igure} \ref{fig:opac_tanaka} points out that unlike Thomson scattering, the bound-bound opacity is wavelength-dependent. As the ejecta expands, local properties of the ejecta such as temperature and density evolve, causing the bound-bound opacity to change over time.  The time evolution of the bound-bound opacity is not straightforward given its intricate dependency on many factors such as the temperature and the density, to cite but a few. 
+However, as long as it does not evolve faster than $t^2$, the optical depth decreases with time (see equations \ref{equa:tau_et_meanPath}). Indeed, the homologous expansion introduced in S\textsc{ection} \ref{subsec:ejection} causes the density to decrease with time as $\rho \sim t^{-3}$. \\
+
+The repartition of the r-process elements among the ejecta mirrors the inhomogenous distribution of the neutron density (see S\textsc{ection} \ref{subsec:ejection}). Indeed, the nucleosynthesis of heavy elements and, a fortiori, the bound-bound opacity, are dictated by the electron fraction. An ejecta with $Y_e$<0.25 can produce heavy elements, that is elements with $A\geq 130-140$, while an ejecta with $Y_e>0.15$ produces light elements with $A\leq 130-140$. 
+As a result, the "blue ejecta" introduced in S\textsc{ection} \ref{subsec:ejection} and represented in F\textsc{igure} \ref{fig:geometry} produces light r-process elements and is impoverished in lanthanides, whereas the "red ejecta" produces heavier r-process elements and is enriched in lanthanides. This inhomogeneous distribution of the lanthanides and actinides elements, with lighter elements being distributed mainly in the shock driven wind and the heavier in the tidally disrupted matter, translates into an anisotropic distribution of opacities throughout the ejecta. Indeed, as illustrated in F\textsc{igure} \ref{fig:opac_tanaka}, bound-bound opacities are sensitive to the composition of the ejecta. More precisely, the light r-process elements, represented in blue in the figure, have a f-shell valence while the heavy r-process elements,  represented in red have a d-shell valence,  resulting in a 100 times larger bound-bound opacity.  For a given wavelength, the bound-bound opacity can span from $\kappa_{b-b} \sim \unit{1}{\square{\centi\meter}\gram^{-1}}$ for a lanthanides free ejecta to $\kappa_{b-b} \sim \unit{100}{\square{\centi\meter}\gram^{-1}}$ for lanthanides-rich ejecta. Owing to that anisotropic distribution of the opacity among the ejecta, the observed light curves\footnote{Light curves are the representation of the luminosity as a function of time in a specific filter.} depend on the viewing angle \footnote{Angle formed between the perpendicular of the merger plane and the line of sight ($\cos(\theta_{obs})=1$ corresponds to the polar direction).} from which the kilonova is observed as pointed out in F\textsc{igure} \ref{fig:observationsLC}. 
+
+\subsection{Prediction of light curves with radiative transfer codes}
+\label{subsec:codes}
+\hspace{\parindent} The interplay between the different ingredients described above can be unravelled thanks to numerical simulations. On one hand, the inspiral dynamics of neutrons stars binaries can be understood with the help of magnetohydrodynamics simulations (hereafter MHD). These numerical calculations are deployed in a General Relativity framework to provide physical constraints on the mechanisms of the merger such as described in S\textsc{ection} \ref{subsec:merger} and S\textsc{ection}  \ref{subsec:ejection} \cite{MHD}. On the other hand, the propagation of photons through an expanding ejecta can be simulated with radiative transfer codes. Most of these codes rely on Monte Carlo techniques, where Monte-Carlo photon packets are treated statistically according to Lucy \cite{Lucy_MonteCarlo}, and rely on local thermodynamic equilibrium  assumptions (hereafter LTE). First applied to provide models of  SNIa, this technique lends itself well to kilonova modelling. Instead of addressing the radiative transfer equation, radiative transfer codes based on a Monte-Carlo technique make predictions on the emergent radiation by estimating  the deposited energy (S\textsc{ection} \ref{subsec:nucleo}) and the opacity (S\textsc{ection} \ref{subsec:opac}) encountered throughout the propagation in the ejecta. \\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{pictures/mapDensity_N100.pdf}
+\caption[Time evolution of the density profile in kilonova]{Density profile evolution with time. An anisotropic distribution of the matter around the merger remnant is assumed with the density scaling as $\rho \propto r^{-3}$ in the wind outflow and as $\rho(r,\theta) \propto r^{-6} \sin(\theta)^2$ in the dynamical ejecta\cite{matter_distribution}. }
+\label{fig:mapDens}
+\end{figure}
+
+The  P{\textsc{ossis}}  code, developed in 2015 (Bulla et al. 2015, \cite{POSSIS_2015}) and upgraded in 2019 (Bulla 2019, \cite{POSSIS_2019}),  assumes as input parameters the masses of the different ejecta, their velocities and a three-dimensional cartesian grid that adopts the geometry presented in F\textsc{igure} \ref{fig:geometry}. This model is axially symmetric and is composed of 
+\begin{enumerate*}[label=\roman*)]
+    \item a lanthanide-free component with high electron fraction ($Y_e$ > 0.25),  
+    \item a lanthanide-rich component with small electron fraction ($Y_e$< 0.25) distributed around the merger plane with an half opening angle of $\phi$ and
+    \item a wind outflow confined in inner part of the kilonova with intermediate values of $Y_e$. 
+\end{enumerate*}
+This model grid assumes the density profile described in F\textsc{igure} \ref{fig:mapDens} in which the matter is anisotropically distributed among the three ejecta. The photons are created and then tracked through an expanding ejecta in which the energy deposition and the opacity is computed at each time. At the end, P\textsc{ossis} can provide synthetic observables like light curves, fluxes and polarization readily comparable to data. 
+\newpage
+%*************************************************************************
+\section{Improving the temperature estimation in kilonova ejecta}
+\label{sec:TempWork}
+\vspace{10pt}
+\subsection{Temperature as a key parameter in kilonova modelling}
+\label{subsec:TempRole}
+\hspace{\parindent}	 In order to make valid predictions on the emergent radiation, one needs to determine the temperature of the medium in which the light propagates. Indeed,  the temperature plays a crucial role in radiative transfer codes in which it intervenes for
+\begin{enumerate*}[label=\roman*)]
+\item frequency sampling by the rejection technique (see A\textsc{ppendix} \ref{appendix:possis}) under the two-levels approach described in\cite{Magee} and for
+\item setting the ionization state of the elements that compose the ejecta by resolving the Saha equation under LTE assumptions. \\
+\end{enumerate*} 
+
+
+In the P\textsc{ossis} code, the temperature controls the initial frequency as well as the frequency redistribution after an absorption event.  Precisely, the two levels approach assumes that when a photon is absorbed by an atom, it can be re-emitted with either the same frequency or another frequency randomly sampled. Although this approach overlooks the multiple line transitions that can occur in a bound-bound interaction, it provides a computational time-reducing advantage. 
+The frequency is then settled by sampling the thermal emissivity, a temperature dependent quantity defined as: 
+
+\begin{align}
+S(\nu) &= B(\nu, T) \kappa_{b-b}(\nu)\\
+\label{equa:thermalEmissivity}
+\nonumber \textnormal{with} \quad  B(\nu, T) &= \frac{8\pi h}{c^3}\frac{\nu^3}{\exp(h\nu\per kT) - 1}, 
+\end{align}
+where $B(\nu, T)$ is the Planck function and $\kappa_{b-b}(\nu)$ is the bound bound opacity as defined in S\textsc{ection} \ref{subsec:opac}. 
+
+\subsection{Temperature estimated from black-body model: a global approach}
+\label{subsec:bb}
+
+\hspace{\parindent}	 As a first attempt, the whole ejecta was considered as a black body, so that the temperature was directly  deduced from the luminosity and the radius using the Stefan-Bolzmann law: 
+ 
+ \begin{align}
+ T = \left(\frac{L}{4\pi R^{2}}\right)^{1/4}
+ \end{align}
+ with the luminosity $L$ given by the radioactive decay assuming a thermalization coefficient from \cite{Barnes_2016} and $R$ the radius of the whole ejecta or that of a photosphere\footnote{A photosphere is a layer from which radiation escapes.} for a given wavelength. 
+ The opacity being smaller in the blue ejecta (F\textsc{igure} \ref{fig:opac_tanaka}), the photosphere at which photons escape is expected to be within compared to the photosphere associated to the red component as outlined in F\textsc{igure} \ref{fig:vphot}. \\
+ 
+ \begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.7\textwidth]{pictures/vphot_red_photons.pdf}
+ \caption[Time evolution of photospheres in kilonova]{Time evolution of the two photospheres associated to the two kinds of dynamical ejecta. As the ejecta gets optically thin with time, photons from inner regions can escape at later time causing the photosphere to move inwards.}
+ \label{fig:vphot}
+\end{figure}  
+ 
+  As a first approach, the radius was assumed to be that of the whole ejecta.  This first attempt led to strong discrepancies revealed in the light curves. As a second approach to this black body model, the radius was estimated from the photosphere whose position was computed at each time $R_{ph} = v_{ph} t$. Since the opacity is wavelength dependent with $\kappa_{bb}(\lambda_{red}) < \kappa_{bb}({\lambda_{blue}})$, we  distinguish two radii corresponding to the red and blue photospheres. Overall, the black body model fails to properly reproduce the data since it gives an approximate description of the model that is quite far from the physics reality of the matter studied, overlooking the local properties of the ejecta. The only merit of these approaches was to connect the temperature to the energy inferred from the radioactive decay. 
+ 
+ \subsection{Temperature derived from the energy input: a local approach}
+ \label{subsec:tempLocal}
+\begin{figure}[h!]
+\begin{minipage}[h]{0.50\linewidth}
+\includegraphics[scale=0.65]{pictures/plt_epsilon_thermal.pdf}
+\caption[Thermalization coefficient for different ejecta properties]{Time evolution of the thermalization coefficient as defined in equation (\ref{equa:total therma}) for different pair of mass and velocity of the ejecta. }
+\label{fig:differentEpsTherma}
+\end{minipage}
+\hspace{10 pt}
+\begin{minipage}[h]{0.50\linewidth}
+\includegraphics[scale=0.65]{pictures/eps_therma.pdf}
+\caption[Thermalization coefficient comparison]{Comparison between the previous thermalization coefficient in (Bulla 2019, \cite{POSSIS_2019}) and the new time-dependent one.}
+\label{fig:comparisonBeforeAfterEpsTherma}
+\end{minipage}
+\end{figure}
+
+\hspace{\parindent}	  Following Magee et al. \cite{Magee}, we turned into a local description of the temperature using the energy density the instead of the luminosity:
+\begin{subequations}
+\label{equa:local_energy_temp}
+\begin{align}
+	u(r,t) & = \frac{4 \sigma}{c} T(r,t)^4, \\
+{\rm{with}}\quad	u(r,t) & =\int_0^t \rho(r,t') \times \left(\dot{\epsilon}  \epsilon_{th}\right)(t') dt'
+\end{align}	
+\end{subequations}
+\noindent where  $\sigma$ is the Boltzman constant and $T(r,t)$ the local temperature. 
+
+\noindent The energy from the radioactive decay of heavy elements is given by the heating rates  $\dot{\epsilon}$ and  the thermalization coefficient $\epsilon_{th}$ estimated in Barnes et al. \cite{Barnes_2016}. The new temperature is then expressed as a function of density and energy from the radioactive decay only (see equation ~\eqref{equa:local_energy_temp}).  This local description of the temperature is implemented in P\textsc{ossis} by constructing tables of energy deposition based on Barnes's thermalization model  (see equations  \eqref{equa:total therma} and \eqref{equa:HeatingRate}). We give an example of such a table in T\textsc{able} \ref{table:energyDeposition}. \\
+
+\begin{table}[!h]
+\begin{center}
+	\begin{tabular}{c c c}
+	\hline
+	\hline
+	t 	&   $\dot{\epsilon}$ & $\epsilon_{\rm{th}}$  \\
+	(s) &  $(\rm{erg}\, \second^{-1}\gram^{-1})$ & adimensional   \\
+	\hline
+	 0.01  & $3.859774.10^{18} $ & 0.720000 \\
+	  0.10 & $3.849360.10^{18}  $ & 0.720000 \\
+	   1.00 &	 $3.428314.10^{18} $ & 	 0.719996 \\
+	             ...     &  ...      &  ...     \\
+          ...     &  ...      &  ...     \\
+          ...     &  ...      &  ...     \\
+   3422851.75 &	 $1.640104.10^{8} $ & 	 0.056408 \\
+ 3426454.76 &	 $1.637862.10^{8} $ &	 0.056362 \\
+3430057.76 &	 $1.635626.10^{8} $	& 0.056317 \\
+\hline
+\end{tabular}
+\end{center}
+\caption[Table of energy deposition]{Energy deposition table inferred from radioactivity heating. These values correspond to a total of ejected mass of $M_{\rm{ej}} =\unit{0.05}{M_{\rm{\odot}}}$ and a velocity of $v_{\rm{ej}}=0.3c$}.
+\label{table:energyDeposition}
+\end{table}
+
+
+\hspace{\parindent}		Using the geometry described in  F\textsc{igure} \ref{fig:geometry},  the time evolution of the temperature is shown in  F\textsc{igure} \ref{fig:profilTemp}. At any given time, the temperature decreases from the innermost regions (small values of $v_{\rm{phot}}$) to the outermost layers (large values of $v_{\rm{phot}}$) due to a decreasing density through the ejecta (cf. F\textsc{igure} \ref{fig:mapDens}).  The time evolution of the parametrized temperature depicts an evolution of the photosphere moving inwards in the ejecta. This tendency is independent of the ejecta parameters, such as the mass ejection or the velocity of the ejecta.\\
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{pictures/profile_temp_new_geo.pdf}
+\caption[Temperature profiles]{Temperature profiles for different layers of velocity in the three components-ejecta compared to the parametrized temperature (grey line) assumed before\cite{POSSIS_2019}.}
+\label{fig:profilTemp}
+\end{figure}
+	
+\hspace{\parindent}	 The two models of temperature are then compared in  F\textsc{igure}\ref{fig:lightCurvesTemp} where the light curves in different bands \footnote{The g and r filters are in the optical band whereas the i and h are in the near-infrared.} are drawn for an ejecta configuration inferred from the AT2017gfo studies, that is from a polar viewing angle for a total mass ejection of $M_{\rm{ej}} = 0.04 M_{\odot}$ and an opening angle of $\phi = 45\degree$. We note a better matching with the data in the near infra red (h band) but drops faster in the r-band.  
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{pictures/lc_oldPossis_vs_NewPossis_1e6.pdf}
+\caption[Light curves with the new estimation of temperature]{Light curves obtained with the upgraded version of the code (dark blue) compared to the old version \cite{POSSIS_2019}  (light blue). Both light curves are obtained using the geometry described in  F\textsc{igure} \ref{fig:geometry} and the density distribution described in  F\textsc{igure} \ref{fig:mapDens} for a number of photons packets $N_{\rm{ph}}= 10^6$. The data from AT2017gfo is shown in circles. The uncertainties of the data are not represented but they don't exceed 0.4 in magnitude \cite{MHD}.}
+\label{fig:lightCurvesTemp}
+\end{figure}
+
+
+%*************************************************************************
+\clearpage 
+\section{Improving the bound-bound opacity treatment}
+\label{sec:OpacWork}
+\hspace{\parindent}	  In this section, except if it is mentioned otherwise, we imply by opacity the bound-bound opacity introduced in S\textsc{ection} \ref{subsec:opac}.
+\subsection{Setting up the ejecta parameters}
+\label{subsec:ejecta_para}
+\hspace{\parindent}	 Unlike the grey opacity model in which the opacity is assumed constant, we aim at providing a parametrized model that takes into account the wavelength and time dependency (see F\textsc{igure} \ref{fig:opac_tanaka}) of the line transitions. To do so, we employ an "inverse" approach where we set the ejecta parameters inferred from studies on  AT2017gfo and we look for the best fits of our parametrized model by confronting the simulations to the observed data. \\
+
+First of all, the ejecta configuration given as input in P\textsc{ossis} is fixed from the literature. 
+In T\textsc{able} \ref{table:kilonovaPara}, we present the values of the ejected  mass, the velocity and the density profile retrieved from kilonova modelling \cite{kawaguchi}.  These parameters help setting up the velocity grid represented in F\textsc{igure} \ref{fig:geometry}. The  determination of the mass ejected is highly sensitive to the neutron star equation of state  adopted. From radio observations, the viewing angle is constrained to $16.5\degree<\theta_{\rm{obs}}<17.2\degree$  (\cite{RadioObservations} and \cite{perego}). In this study, the viewing angle and the half opening angle defined in F\textsc{igure} \ref{fig:geometry} have been fixed to  $\theta_{\rm{obs}}= 17\degree$ and $\phi = 45\degree$ respectively.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l||c|c|c}
+
+							 & \bm{$M_{\rm{ej}}$} &  \bm{$v_{ej}$} & \bm{$\rho (r)$}\\
+\hline
+\textbf{Dynamical ejecta}  & 	$\unit{0.01}{M_{\odot}}$ &	up to 0.9c &	$\rho \sim r^{-6}$	\\
+\hline
+\textbf{Wind ejecta} 			&	$\unit{0.05}{M_{\odot}}$\tablefootnote{From the new disk mass estimation performed in \cite{first_paper}}	&	0.025c to 0.08c &		$\rho \sim r^{-3}$	\\
+\end{tabular}
+\caption[Ejecta configurations tailored to AT2017gfo]{Ejecta parameters for AT2017gfo.}
+\label{table:kilonovaPara}
+\end{table}
+The distinction between the two components that compose the dynamical ejecta is based on the electron fraction $Y_e$ with a threshold fixed to 0.25.
+
+\subsection{A parametrized model for opacity}
+\label{subsec:Opacmodel_para}
+\hspace{\parindent} Guided by the atomic calculations performed in \cite{tanaka}, we construct a parametrized model of the bound-bound opacity that attempts to reproduce its main behaviours illustrated in F\textsc{igure} \ref{fig:opac_tanaka}: 
+
+\begin{align}
+\label{equa:rampModel}
+\textnormal{for} \, \lambda<\lambda_0: \quad \kappa(\lambda, t) &= \kappa_0\, \\
+\notag\textnormal{for} \,  \lambda>\lambda_0: \quad \kappa(\lambda, t) &= \kappa_0 \left(\frac{\lambda}{\lambda_0}\right)^{-\alpha(t)}
+\end{align}
+In this fiducial model, the wavelength and time dependency of $\kappa$ are dictated by $\alpha(t)$ which evolves with time as a power law:
+
+\begin{equation}
+\alpha(t) = \alpha_0 \left(\frac{t}{t_0}\right)^{\gamma}
+\label{equa:alphaModel}
+\end{equation}
+
+This gives a ramp model in a $\log-\log$ plane. 
+From  the line transitions data given F\textsc{igure} \ref{fig:OpacBrut} in A\textsc{ppendix} \ref{appendix:opacTanaka},  we infer that, broadly speaking, the overall opacity 
+\begin{enumerate*}[label=\roman*)]
+\item decreases at larger wavelength, 
+\item slightly increases with time and 
+\item is larger in the lanthanide rich ejecta than in the lanthanide free ejecta in all the wavelength range considered and for all epochs.
+\end{enumerate*}
+Thus, the time evolving parameter $\alpha$ ought to be positive at all times. Then, we take into account that the opacity depends on the ejecta by allowing $\kappa_0$ and $\lambda_0$ to vary according to the considered ejecta.   \\
+
+
+The opacity is also given at five different epochs (see F\textsc{igure}\ref{fig:OpacBrut} in A\textsc{ppendix} \ref{appendix:opacTanaka}), enabling us to employ minimization techniques to retrieve the best values of the parameter $\alpha$ for each epoch. \\
+
+ First, we perform a moving average technique to smooth the data and to remove the extremes values. Then, we apply the ramp model described in equation ~\eqref{equa:rampModel} in which the values of $\kappa_0$ and $\lambda_0$ are fixed by eye. Doing so, we have three known parameters: $\kappa_0$, $\lambda_0$ and $t_0$. The fit is then performed with the curve fitting function from \textbf{scipy package} in python using the Levenberg-Marquardt algorithm. \\
+ 
+For each ejecta, the analysis fitting gives a value of $\alpha$ for each epoch. Then, having four values $\alpha$ for each ejecta, we apply a linear fitting to deduce the parameter $\gamma$ (see equation ~\eqref{equa:alphaModel}). \\
+
+\begin{figure}[!h]
+    \begin{minipage}[t]{0.5\textwidth}
+    \advance\leftskip-1cm
+        \includegraphics[scale=0.7]{pictures/LR/fit_LR_15.pdf}
+        %[0.10 cm]
+        \subcaption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\textwidth}
+		\advance\leftskip-0.2cm
+        \includegraphics[scale=0.7]{pictures/LR/fit_LR_25.pdf}
+        \subcaption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\textwidth}
+          \advance\leftskip-1cm
+        	\includegraphics[scale=0.7]{pictures/LF/fit_LF_15d.pdf}\\%[0.10 cm]
+        	\subcaption{}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\textwidth}
+      \advance\leftskip-0.2cm
+        \includegraphics[scale=0.7]{pictures/LF/fit_LF_25d.pdf}
+        \subcaption{}
+    \end{minipage}
+\caption[Opacities fitted with a ramp model]{Opacities distribution in a $\log_{10}-\log_{10}$ plane at 1.5 and 2.5 days after merger in 
+\textbf{(a)} and  \textbf{(b)} a lanthanide rich material, 
+\textbf{(c)} and \textbf{(d)}  a lanthanide free material.
+Raw data (blue dots) and smoothed data (orange dots) are shown. The best fit model is shown in the blue and red lines. }
+ \label{fig:RampModel}
+\end{figure}
+
+In F\textsc{igure} \ref{fig:RampModel}, we present the fitting analysis for the first two epochs. We found that after 3 epochs, the values of $\kappa_0$ and $\lambda_0$ are no more suitable and need to be changed.  Thus we limit our study to reproducing the overall behaviour only for the first two epochs. The results of the analysis fitting are summed up in T\textsc{able} \ref{table:RampModel}.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{l||c|c|c|c}
+				& $\log\kappa_0$ & $\log\lambda_0$ & $\alpha_0$ & $\gamma$\\
+				\hline
+Lanthanide rich ejecta & 2.00 & 3.65	& 8.86	& -0.74\\
+\hline
+Lanthanide free ejecta 	& 	1.70 & 3.45	& 10.78& -0.30
+\end{tabular}
+\caption{Best fit values for the ramp model}
+\label{table:RampModel}
+\end{table}
+
+
+\subsection{Models comparison and parameters estimation }
+\label{subsec:bestFit}
+
+\hspace{\parindent} With the values of $\lambda_0$ and $\alpha_0$ retrieved from the fitting analysis (see T\textsc{able} \ref{table:RampModel}), we set a new version of the code in which this fiducial model is implemented. We construct a grid with four free parameters, namely $\kappa_0^{\rm{lr}}$, $\gamma^{\rm{lr}}$, $\kappa_0^{\rm{lf}}$ and $\gamma^{\rm{lf}}$ where lf is for lanthanide free and lr for lanthanide rich. The $\kappa_0$ parameters range from 1 to $10^5$, while the $\gamma$ range from -1 to 0.2. 
+\begin{itemize}
+\item $\kappa_0$ = [1, 10, 100, 1000, 10000]
+\item $\gamma$ = [-1, -0.7, -0.4, -0.1, 0.2]
+\end{itemize}
+Over this grid, we run several simulations with the ejecta configurations described in T\textsc{able} \ref{table:kilonovaPara}. An example of such simulations is displayed in F\textsc{igure} \ref{fig:simulationsGrid} where we represent a set of simulations with $\kappa_0^{\rm{lr}} = 1000$. 
+
+\begin{figure}[!h]
+		\centering
+        \includegraphics[width=\textwidth]{pictures/lc_simulations_kappaLR1000.pdf}
+ \caption[Light curves comparison between different models]{Comparison of light curves in different bands. The simulations, in pale blue, are compared to the previous model of opacity \cite{POSSIS_2019} (in solid blue line) and to the data (in blue circle). For clarity purpose, only the simulations with $\kappa_0^{\rm{lr}}$ = 1000 are drawn. These simulations are conducted with a lighter wind overflow about 0.03$M_{\odot}$.} 
+ \label{fig:simulationsGrid}
+\end{figure}
+Using the Bayesian procedure implemented by Michael Coughlin \cite{CoughlinMethod}, we search for the best fit estimation for the free parameters based on a comparison with the data of AT2017gfo. The corner plots displayed in F\textsc{igure} \ref{fig:cornerplot} help probing the 4 parameters space from which the following best values of the parameters can be retrieved: 
+\begin{itemize}
+\item $\kappa_0^{\rm{lr}}$ =\unit{ 794}{\square{\centi\meter}\per\gram} 
+\item $\gamma^{\rm{lr}}$  = $-0.45_{-0.33}^{+0.23}$
+\item $\kappa_0^{\rm{lf}}$ = \unit{ 1.2\, 10^{3}}{\square{\centi\meter}\per\gram} 
+\item $\gamma^{\rm{lf}}$ = $-0.12_{-0.16}^{+0.08}$
+\end{itemize}
+The parameter estimation has been carried out in all the filters  (optical and near infra-red) in which the data has been available and for different epochs (up to 14 days after the merger). The comparison between the models used and the data can be seen in F\textsc{igure} \ref{fig:LCmodelsGrid} (A\textsc{ppendix} \ref{appendix:corner_plots}).
+\begin{figure}[!h]
+	\includegraphics[width=\textwidth]{pictures/corner-2.pdf}
+\caption[Corner plots for estimation of opacity model parameters ]{Corner plots depicting the constraints on the parametrized model of opacity in a 4-parameters space using Coughlin's code \cite{CoughlinMethod}.}
+\label{fig:cornerplot}
+\end{figure}
+
+Overall, the  free parameters are well constrained by the analysis, except for $\gamma_{\rm{LF}}$ which tends to overlap positive values. This highlights the difficulty of estimating  the time-dependency of the opacity in a time-dependent ejecta. \\
+
+As a final check, we compare the opacity data from \cite{tanaka} given in F\textsc{igure} \ref{fig:OpacBrut} with the parametrized model described in S\textsc{ection} \ref{subsec:Opacmodel_para} with the parameters inferred from Coughlin's analysis in F\textsc{igure} \ref{fig:cclOpacWork}.   Here again the limit of the model at late epochs is pointed out. For both ejecta, lanthanides rich and lanthanides free, the model seems to overestimate the opacities especially at large wavelengths. 
+
+\begin{figure}[h!]
+    \advance\leftskip-1cm
+\includegraphics[scale=0.9]{pictures/opac_ccl_allepochs.pdf}
+\caption[Opacity parametrized model compared to line transitions data]{Opacity parametrized model (in thick solid lines) compared to the data lines from \cite{tanaka} at 4 different epochs. The lanthanides rich ejecta is represented in red, while the lanthanides poor ejecta is in blue.}
+\label{fig:cclOpacWork}
+\end{figure}
+%*************************************************************************
+\clearpage
+\section*{Conclusion and perspectives}
+\vspace{10pt}
+\addcontentsline{toc}{section}{Conclusion and perspectives}
+\hspace{\parindent} The main aim of the project is to provide a more physically motivated radiative transfer code that can synthesize fluxes for any given ejecta configurations. In that perspective,  we have mainly focused on improving the treatment of the temperature and of the bound-bound opacity. Both are key physical quantities that shape the escaping radiation, impacting the synthetic observables like light curves. Thus, having a good physics asset helps in getting  models-independent kilonova predictions. \\
+
+The treatment of the temperature has been significantly improved. Indeed, the previous parametrized model have been discarded for a more physically based description where the temperature is related to the energy deposition and to the density of the ejecta. This new treatment enables us to produce robust kilonova models alleviated  from free parameters. The new kilonova models produced have been used in a study that aims at putting constraints on the neutron star's interior equation of state and  at addressing the Hubble constant tension \cite{first_paper} (Science, submitted).\\
+
+In terms of improving the bound-bound opacity, there is still a substantial work to be done. In particular, the time dependency needs to be investigated further more. Moreover, one can explore the inferred opacity  model with different mass of the wind outflow for AT2017gfo to probe how the parametrized model depends on the ejecta configurations. 
+\section*{Acknowledgements}
+\vspace{10pt}
+\addcontentsline{toc}{section}{ Acknowledgements}
+
+\hspace{\parindent} First of all, I would like to deeply thank my supervisor Mattia Bulla for his constant support throughout the year and for walking me through the project till the end despite the unusual circumstances. I would also like to thank all the Nordita people for hosting me and in particular Hans for his help in technical support and for his joviality. \\
+
+\indent I obviously thank everyone in the Astronomy Group for this opportunity to do a long term project before the doctorate. I would like to thank Michael Coughlin for his collaboration to the project and for producing surrogate models that helped testing the parametrized model of opacity. \\
+
+\indent Finally I would like to more generally thank the students that I met, John, Alex and Roberto for sharing convivial coffee breaks with me in the bleak winter of Sweden.  A peculiar mention to the Phd student Wilfried Mercier for his meticulous review of this work. 
+\clearpage
+\bibliographystyle{ieeetr}
+\begin{multicols}{2}
+\bibliography{ref}
+\end{multicols}
+%*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\clearpage
+\appendix
+\section{P\textsc{ossis} outlines}
+\label{appendix:possis}
+\hspace{\parindent} The P\textsc{ossis} code relies on a Monte Carlo technique for predicting the escaped radiation from an expanding medium. We present the outlines structure in F\textsc{igure} \ref{fig:structurePossis} where we stress on the inputs parameters and on the outputs models produced. Inside the Possis core box, $N_{\rm{ph}}$  photon packets are created at each time. While propagating through the expanding medium, the photon packet undergoes either a scattering or an absorption event, depending  on a random number generated at each interaction. Once the event selected, the photon packet undergoes some modifications in terms of their frequency or direction (polarization) according to the event. For instance, in case of a scattering, a new direction is drawn and the frequency is kept unchanged. On the contrary, in the case of an absorption event, the packet is re-emitted isotropically and a new frequency is drawn by the {\itshape{rejection technique}}. \\
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{pictures/possis_structure.png}
+\caption[P\textsc{ossis} main structure]{P\textsc{ossis} main structure}
+\label{fig:structurePossis}
+\end{figure}
+
+For a given probability distribution function $f(x)$ of a quantity $x$, the rejection technique consists in randomly generating a value of the variable $x$. After randomly drawing two numbers $\xi_1$ and $\xi_2$, it defines:
+\begin{align*}
+x &= \xi_1(x_{\rm{max}} -x_{\rm{min}} ) + x_{\rm{min}} \\
+y &= \xi_2 f_{\rm{max}}
+\end{align*}
+If $y<f(x)$, the $x$ value is kept. If not, new numbers $\xi_1$ and $\xi_2$ are drawn.\\
+This technique is used in P\textsc{ossis} for the frequency sampling. The distribution of the frequency is given by the thermal emissivity. 
+\clearpage
+\section{Methodology for best fit parameters research}
+\label{appendix:corner_plots}
+
+\hspace{\parindent} Coughlin's code probes the 4-dimensions grid made of $\kappa_0$=1, 10, 100, 1000, 1000 and $\gamma$=-1, -0.7, -0.4, -0.1, 0.2 for both ejecta by producing surrogate models that are used to compute the likelihood of the parametrized opacity model. 
+The surrogate models are built by interpolating the outputs provided by P\textsc{ossis} using a Gaussian Process Regression interpolation \cite{GPR}. An example of these surrogate can be seen in F\textsc{igure} \ref{fig:LCmodelsGrid}. \\
+\begin{figure}[h!]
+\includegraphics[width=0.7\textwidth]{pictures/models_panels.pdf}
+\caption[Light curves predictions compared to observed light curves]{Observed light curves (in dots) in different bands are compared to the predictions from the surrogate models produced by Coughlin.}
+\label{fig:LCmodelsGrid}
+\end{figure}
+\clearpage
+
+\section{Opacities atomic data}
+\label{appendix:opacTanaka}
+We give in F\textsc{igure} \ref{fig:OpacBrut} the bound-bound opacities as performed in \cite{tanaka} that are used in the opacity analysis presented in S\textsc{ection} \ref{sec:OpacWork}.
+\begin{figure}[!h]
+\advance\leftskip-1.5cm
+\includegraphics[scale=0.95]{pictures/opacTanaka_allepochs.pdf}
+\caption[Bound-Bound Opacities from atomic data calculations]{Bound-Bound Opacities for a lanthanides rich (in red) and lanthanides free (in blue) material in 4 different epochs \cite{tanaka}, \cite{OpacRaw}}.
+\label{fig:OpacBrut}
+\end{figure}
+
+\end{document}

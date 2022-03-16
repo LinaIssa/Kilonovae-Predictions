@@ -1,0 +1,21 @@
+\contentsline {section}{Introduction}{i}{section*.1}%
+\contentsline {section}{Structure layout}{ii}{section*.2}%
+\contentsline {section}{\numberline {1}At the origin of kilonovae}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Merger of two neutron stars}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Different mechanisms of ejection}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Nucleosynthesis of heavy elements}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Different sources of opacity}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Prediction of light curves with radiative transfer codes}{6}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Improving the temperature estimation in kilonova ejecta}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Temperature as a key parameter in kilonova modelling}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Temperature estimated from black-body model: a global approach}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Temperature derived from the energy input: a local approach}{8}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Improving the bound-bound opacity treatment}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Setting up the ejecta parameters}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}A parametrized model for opacity}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Models comparison and parameters estimation }{12}{subsection.3.3}%
+\contentsline {section}{Conclusion and perspectives}{16}{section*.23}%
+\contentsline {section}{ Acknowledgements}{16}{section*.24}%
+\contentsline {section}{\numberline {A}P\textsc {ossis} outlines}{18}{appendix.A}%
+\contentsline {section}{\numberline {B}Methodology for best fit parameters research}{19}{appendix.B}%
+\contentsline {section}{\numberline {C}Opacities atomic data}{20}{appendix.C}%
