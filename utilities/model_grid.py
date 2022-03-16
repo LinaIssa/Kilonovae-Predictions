@@ -1,4 +1,8 @@
-
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 10  19:24 2020
+@author: Lina ISSA
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from math import asin,pi, sqrt

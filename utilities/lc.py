@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Dec the 27 2019
+@author: Lina Issa
+"""
+
 import numpy as np
 import sncosmo as sn
 import matplotlib.pyplot as plt
