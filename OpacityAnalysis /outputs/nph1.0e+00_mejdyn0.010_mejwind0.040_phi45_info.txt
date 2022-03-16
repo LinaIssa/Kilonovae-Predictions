@@ -1,0 +1,122 @@
+Timestep 1 out of 100 finished (0.10 days). Time: 1.550 
+Timestep 2 out of 100 finished (0.30 days). Time: 1.690 
+Timestep 3 out of 100 finished (0.50 days). Time: 1.831 
+Timestep 4 out of 100 finished (0.70 days). Time: 1.957 
+Timestep 5 out of 100 finished (0.90 days). Time: 2.059 
+Timestep 6 out of 100 finished (1.10 days). Time: 2.176 
+Timestep 7 out of 100 finished (1.30 days). Time: 2.302 
+Timestep 8 out of 100 finished (1.50 days). Time: 2.433 
+Timestep 9 out of 100 finished (1.70 days). Time: 2.570 
+Timestep 10 out of 100 finished (1.90 days). Time: 2.668 
+Timestep 11 out of 100 finished (2.10 days). Time: 2.788 
+Timestep 12 out of 100 finished (2.30 days). Time: 2.885 
+Timestep 13 out of 100 finished (2.50 days). Time: 3.014 
+Timestep 14 out of 100 finished (2.70 days). Time: 3.148 
+Timestep 15 out of 100 finished (2.90 days). Time: 3.581 
+Timestep 16 out of 100 finished (3.10 days). Time: 4.033 
+Timestep 17 out of 100 finished (3.30 days). Time: 4.569 
+Timestep 18 out of 100 finished (3.50 days). Time: 5.073 
+Timestep 19 out of 100 finished (3.70 days). Time: 5.258 
+Timestep 20 out of 100 finished (3.90 days). Time: 5.447 
+Timestep 21 out of 100 finished (4.10 days). Time: 5.719 
+Timestep 22 out of 100 finished (4.30 days). Time: 6.067 
+Timestep 23 out of 100 finished (4.50 days). Time: 6.209 
+Timestep 24 out of 100 finished (4.70 days). Time: 6.534 
+Timestep 25 out of 100 finished (4.90 days). Time: 6.697 
+Timestep 26 out of 100 finished (5.10 days). Time: 6.958 
+Timestep 27 out of 100 finished (5.30 days). Time: 7.169 
+Timestep 28 out of 100 finished (5.50 days). Time: 7.406 
+Timestep 29 out of 100 finished (5.70 days). Time: 7.764 
+Timestep 30 out of 100 finished (5.90 days). Time: 7.890 
+Timestep 31 out of 100 finished (6.10 days). Time: 8.068 
+Timestep 32 out of 100 finished (6.30 days). Time: 8.202 
+Timestep 33 out of 100 finished (6.50 days). Time: 8.369 
+Timestep 34 out of 100 finished (6.70 days). Time: 8.548 
+Timestep 35 out of 100 finished (6.90 days). Time: 8.821 
+Timestep 36 out of 100 finished (7.10 days). Time: 8.959 
+Timestep 37 out of 100 finished (7.30 days). Time: 9.133 
+Timestep 38 out of 100 finished (7.50 days). Time: 9.286 
+Timestep 39 out of 100 finished (7.70 days). Time: 9.403 
+Timestep 40 out of 100 finished (7.90 days). Time: 9.512 
+Timestep 41 out of 100 finished (8.10 days). Time: 9.674 
+Timestep 42 out of 100 finished (8.30 days). Time: 9.816 
+Timestep 43 out of 100 finished (8.50 days). Time: 9.965 
+Timestep 44 out of 100 finished (8.70 days). Time: 10.107 
+Timestep 45 out of 100 finished (8.90 days). Time: 10.211 
+Timestep 46 out of 100 finished (9.10 days). Time: 10.351 
+Timestep 47 out of 100 finished (9.30 days). Time: 10.465 
+Timestep 48 out of 100 finished (9.50 days). Time: 10.604 
+Timestep 49 out of 100 finished (9.70 days). Time: 10.751 
+Timestep 50 out of 100 finished (9.90 days). Time: 10.893 
+Timestep 51 out of 100 finished (10.10 days). Time: 11.057 
+Timestep 52 out of 100 finished (10.30 days). Time: 11.206 
+Timestep 53 out of 100 finished (10.50 days). Time: 11.364 
+Timestep 54 out of 100 finished (10.70 days). Time: 11.517 
+Timestep 55 out of 100 finished (10.90 days). Time: 11.665 
+Timestep 56 out of 100 finished (11.10 days). Time: 11.792 
+Timestep 57 out of 100 finished (11.30 days). Time: 11.893 
+Timestep 58 out of 100 finished (11.50 days). Time: 12.023 
+Timestep 59 out of 100 finished (11.70 days). Time: 12.124 
+Timestep 60 out of 100 finished (11.90 days). Time: 12.270 
+Timestep 61 out of 100 finished (12.10 days). Time: 12.406 
+Timestep 62 out of 100 finished (12.30 days). Time: 12.532 
+Timestep 63 out of 100 finished (12.50 days). Time: 12.685 
+Timestep 64 out of 100 finished (12.70 days). Time: 12.815 
+Timestep 65 out of 100 finished (12.90 days). Time: 12.958 
+Timestep 66 out of 100 finished (13.10 days). Time: 13.088 
+Timestep 67 out of 100 finished (13.30 days). Time: 13.202 
+Timestep 68 out of 100 finished (13.50 days). Time: 13.318 
+Timestep 69 out of 100 finished (13.70 days). Time: 13.464 
+Timestep 70 out of 100 finished (13.90 days). Time: 13.568 
+Timestep 71 out of 100 finished (14.10 days). Time: 13.733 
+Timestep 72 out of 100 finished (14.30 days). Time: 13.895 
+Timestep 73 out of 100 finished (14.50 days). Time: 14.019 
+Timestep 74 out of 100 finished (14.70 days). Time: 14.184 
+Timestep 75 out of 100 finished (14.90 days). Time: 14.330 
+Timestep 76 out of 100 finished (15.10 days). Time: 14.465 
+Timestep 77 out of 100 finished (15.30 days). Time: 14.588 
+Timestep 78 out of 100 finished (15.50 days). Time: 14.733 
+Timestep 79 out of 100 finished (15.70 days). Time: 14.839 
+Timestep 80 out of 100 finished (15.90 days). Time: 14.945 
+Timestep 81 out of 100 finished (16.10 days). Time: 15.048 
+Timestep 82 out of 100 finished (16.30 days). Time: 15.182 
+Timestep 83 out of 100 finished (16.50 days). Time: 15.317 
+Timestep 84 out of 100 finished (16.70 days). Time: 15.420 
+Timestep 85 out of 100 finished (16.90 days). Time: 15.520 
+Timestep 86 out of 100 finished (17.10 days). Time: 15.666 
+Timestep 87 out of 100 finished (17.30 days). Time: 15.797 
+Timestep 88 out of 100 finished (17.50 days). Time: 15.930 
+Timestep 89 out of 100 finished (17.70 days). Time: 16.063 
+Timestep 90 out of 100 finished (17.90 days). Time: 16.207 
+Timestep 91 out of 100 finished (18.10 days). Time: 16.305 
+Timestep 92 out of 100 finished (18.30 days). Time: 16.443 
+Timestep 93 out of 100 finished (18.50 days). Time: 16.545 
+Timestep 94 out of 100 finished (18.70 days). Time: 16.680 
+Timestep 95 out of 100 finished (18.90 days). Time: 16.780 
+Timestep 96 out of 100 finished (19.10 days). Time: 16.877 
+Timestep 97 out of 100 finished (19.30 days). Time: 17.008 
+Timestep 98 out of 100 finished (19.50 days). Time: 17.142 
+Timestep 99 out of 100 finished (19.70 days). Time: 17.278 
+Timestep 100 out of 100 finished (19.90 days). Time: 17.406 
+
+0 real packets thermalised in the inner region
+16 real packets were killed as they travelled in a high-opacity cell 
+
+ ---------- OBSERVER 1 (costh = 0.00, phi = 0.0) -----------
+1.18e+04 virtual packets arrived at the observer
+- 100 (0.84%) arrived directly after creation
+- 1.17e+04 (99.13%) were scattered by a continuum interaction
+- 3 (0.03%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+ ---------- OBSERVER 2 (costh = 1.00, phi = 0.0) -----------
+1.19e+04 virtual packets arrived at the observer
+- 100 (0.84%) arrived directly after creation
+- 1.17e+04 (99.13%) were scattered by a continuum interaction
+- 3 (0.03%) were scattered by an electron
+- 0 (0.00%) were scattered by a line
+0 virtual packets thermalised in the inner region
+
+Total time: 17.407 
+
